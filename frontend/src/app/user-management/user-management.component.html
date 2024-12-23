@@ -1,0 +1,56 @@
+<div class="container-fluid" style="background-color: #1F1F1F;">
+  <div class="card">
+    <h4 class="text-center">Users</h4>
+
+    <!-- Button to create a new user -->
+    <button class="btn btn-primary mt-5" style="width: 200px;" (click)="openCreateUserModal()">Create New User</button>
+
+    <!-- User list table -->
+    <div class="table-responsive mt-4">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="onDeleteUser(user._id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Create User Modal -->
+  <div class="modal-background" *ngIf="showCreateUserModal">
+    <div class="modal-content">
+      <h5>Create New Waiter</h5>
+      <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control" formControlName="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" formControlName="password" required>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="createUser()">Create</button>
+        <button type="button" class="btn btn-secondary" (click)="closeCreateUserModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+</div>

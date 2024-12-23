@@ -1,0 +1,28 @@
+<div class="container-fluid" style="min-height: 100vh; background-color: #1F1F1F; padding: 20px;">
+  <div class="card" style="max-width: 400px; margin: 0 auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h4 class="text-center mb-4" style="font-weight: bold;">Restaurant Invoice</h4>
+
+    <div style="height: 1px; background-color: rgba(128, 128, 128, 0.359); width: 100%; margin-bottom: 20px;"></div>
+
+    <p style="font-size: 14px; margin-bottom: 5px;"><strong>Order ID:</strong> {{ order?._id }}</p>
+    <p style="font-size: 14px; margin-bottom: 5px;"><strong>Client:</strong> {{ order?.username }}</p>
+
+    <p style="font-size: 14px; margin-bottom: 5px;"><strong>Table Number:</strong> {{ order?.tableNumber }}</p>
+    <p style="font-size: 14px; margin-bottom: 20px;"><strong>Creation date:</strong> {{ order?.createdAt | date:'dd MMMM yyyy' }}</p>
+
+    <div style="margin-bottom: 20px;">
+      <h5 style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 15px;">Order Details</h5>
+      <div *ngFor="let item of order?.orderDetails" style="margin-bottom: 10px;">
+        <p style="font-size: 16px; margin: 0; padding: 0;"><strong>{{ item.productName }}</strong></p>
+        <p style="font-size: 14px; color: #666; margin: 0; padding: 0;">Quantity: {{ item.quantity }}</p>
+      </div>
+    </div>
+
+    <div style="height: 1px; background-color: rgba(128, 128, 128, 0.359); width: 100%; margin-bottom: 20px;"></div>
+
+    <div style="text-align: right;">
+      <p style="font-size: 18px; font-weight: bold;">Total: €{{ order?.totalPrice | number:'1.2-2' }}</p>
+    </div>
+    <button class="btn btn-success btn-block btn-print mt-3" style="border-radius: 25px; padding: 10px 0;" (click)="printInvoice()">Print Invoice</button>
+  </div>
+</div>

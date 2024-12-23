@@ -1,0 +1,78 @@
+.container-fluid {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: #212529;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table thead th {
+  border-bottom: 2px solid #444;
+  padding: 10px;
+}
+
+.table tbody td {
+  border-top: 1px solid #444;
+  padding: 8px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+input.form-control {
+  background-color: #343a40; /* Dark background for input */
+  border: 1px solid #495057; /* Dark border */
+  color: white!important; /* Text color */
+}
+input::placeholder {
+  color: rgba(158, 157, 157, 0.512)
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons */
+  margin-top: 20px;
+}
+
+.btn {
+  width: 100%; /* Full width buttons */
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+.btn-success {
+  background-color: #ffc107; /* Warning color (yellow/orange) */
+  border: none;
+}
+
+.btn-primary {
+  background-color: #00aaff; /* Blue sky color */
+  border: none;
+}
+
+.btn-block {
+  margin-top: 10px;
+}
+

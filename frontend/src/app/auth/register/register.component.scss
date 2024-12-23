@@ -1,0 +1,35 @@
+
+.container-fluid {
+  padding: 10px 8px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: #2a2a2a;
+  color:white;
+  width: 400px;
+}
+
+.btn-primary {
+  background-color: #00AAFF;
+  border-color: #00AAFF;
+}
+
+.btn-primary:hover {
+  background-color: #00AAFF;
+  border-color: #00AAFF;
+}
+
+.btn-link {
+  color: #00AAFF;
+}
+
+.btn-link:hover {
+  color: #00AAFF;
+  text-decoration: none;
+}

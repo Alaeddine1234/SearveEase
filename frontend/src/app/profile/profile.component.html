@@ -1,0 +1,43 @@
+<!-- User Profile Component HTML -->
+<div class="container-fluid" style="min-height: 100vh;">
+  <div class="card p-4">
+    <h2 class="text-center mb-4">Profile</h2>
+    <div class="profile-info mb-4">
+      <div class="profile-item mb-2">
+        <strong class="me-2">Username:</strong>
+        <span>{{ username }}</span>
+      </div>
+      <div class="profile-item mb-2">
+        <strong class="me-2">Email:</strong>
+        <span>{{ email }}</span>
+      </div>
+    </div>
+    <div class="button-group text-center mt-4">
+      <button (click)="openChangePasswordModal()" class="btn btn-warning">Change Password</button>
+    </div>
+  </div>
+
+
+  <!-- Password Change Modal -->
+  <div *ngIf="showChangePasswordModal" class="modal-overlay" (click)="closeChangePasswordModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3 class="mb-4">Change Password</h3>
+      <form (ngSubmit)="onChangePassword()" #changePasswordForm="ngForm">
+        <div class="form-group mb-3">
+          <label for="oldPassword" class="mb-2">Old Password</label>
+          <input type="password" id="oldPassword" class="form-control" [(ngModel)]="oldPassword" name="oldPassword" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="newPassword" class="mb-2">New Password</label>
+          <input type="password" id="newPassword" class="form-control" [(ngModel)]="newPassword" name="newPassword" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="confirmNewPassword" class="mb-2">Confirm New Password</label>
+          <input type="password" id="confirmNewPassword" class="form-control" [(ngModel)]="confirmPassword" name="confirmNewPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="closeChangePasswordModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

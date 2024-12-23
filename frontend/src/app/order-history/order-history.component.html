@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="card">
+    <h4 class="text-center">Order History</h4>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Client Username</th>
+          <th>Order Details</th>
+          <th>Date of Order</th>
+          <th>Table Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.username }}</td>
+          <td>{{ order.details }}</td>
+          <td>{{ order.date }}</td>
+          <td>{{ order.table }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

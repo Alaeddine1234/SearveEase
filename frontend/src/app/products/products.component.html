@@ -1,0 +1,93 @@
+<div class="container-fluid" style="background-color: #1F1F1F;">
+  <div class="card">
+    <h4 class="text-center">Our Dishes</h4>
+
+    <!-- Button to create a new product -->
+    <button class="btn btn-primary mt-5" style="width: 200px;" (click)="openCreateProductModal()">Create New Product</button>
+
+    <!-- Product list table -->
+    <table class="table table-dark mt-4">
+      <thead>
+        <tr>
+          <th>Nom du Plat</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Prix</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of dishes">
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="openModifyProductModal(product)">Modify</button>
+            <button class="btn btn-danger btn-sm" (click)="onDeleteDish(product._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal-background" *ngIf="showCreateProductModal">
+    <div class="modal-content">
+      <h5>Create New Product</h5>
+      <form [formGroup]="createProductForm" (ngSubmit)="createProduct()">
+        <div class="form-group">
+          <label for="name">Nom du Plat</label>
+          <input type="text" id="name" class="form-control" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description du Plat</label>
+          <input type="text" id="description" class="form-control" formControlName="description" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" class="form-control" formControlName="category" required>
+            <option value="plats">Plats</option>
+            <option value="boissons">Boissons</option>
+            <option value="sauces">Sauces</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price">Prix</label>
+          <input type="number" id="price" class="form-control" formControlName="price" required>
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+        <button type="button" class="btn btn-secondary" (click)="closeCreateProductModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="modal-background" *ngIf="showModifyProductModal">
+    <div class="modal-content">
+      <h5>Modify Product</h5>
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdateDish()">
+        <div class="form-group">
+          <label for="editName" class="my-3 mb-2">Nom du Plat</label>
+          <input type="text" id="editName" class="form-control" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <label for="editCategory" class="mb-2">Category</label>
+          <select id="editCategory" class="form-control" formControlName="category" required>
+            <option value="plats">Plats</option>
+            <option value="boissons">Boissons</option>
+            <option value="sauces">Sauces</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="editPrice" class="mb-2">Prix</label>
+          <input type="number" id="editPrice" class="form-control" formControlName="price" required>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModifyProductModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

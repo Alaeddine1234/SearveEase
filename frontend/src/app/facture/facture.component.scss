@@ -1,0 +1,33 @@
+.container-fluid {
+  padding: 20px; /* Adjusted padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: #2a2a2a;
+  color: white;
+  width: 500px;
+  padding: 30px; /* Adjusted padding */
+}
+
+.table {
+  margin-top: 20px; /* Spacing between card content and table */
+}
+
+.table thead th {
+  border-bottom: 2px solid #444;
+  padding: 10px; /* Added padding */
+}
+
+.table tbody td {
+  border-top: 1px solid #444;
+  padding: 8px; /* Added padding */
+}
+
+.btn-print {
+  margin-top: 20px; /* Adjusted margin */
+}

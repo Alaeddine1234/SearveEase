@@ -1,0 +1,59 @@
+.container-fluid {
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: #2a2a2a;
+  color: white;
+  width: 500px;
+  padding: 40px; /* Added padding to the card */
+}
+
+/* Styling for the welcome card */
+.welcome-card {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px; /* Increased padding for more space inside the card */
+  width: 100%;
+  max-width: 600px; /* Limit the width of the card */
+  text-align: center;
+}
+
+/* Remove logo styling */
+.logo {
+  display: none; /* Hide the logo image */
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  padding: 10px 20px; /* Reduced button height with less padding */
+  font-size: 14px; /* Slightly smaller font size */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.btn-golden {
+  background-color: goldenrod; /* Blue color for primary action (Login) */
+  border: none;
+}
+
+.btn-secondary {
+  background-color: rgb(0, 170, 255); /* Green color for secondary action (Create Account) */
+  border: none;
+}

@@ -1,0 +1,63 @@
+/* General Styles for Dark Mode */
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+.container.my-orders-container {
+  padding: 20px;
+  color: #fff;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #fff;
+  background-color: #444;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #555;
+}
+
+.table thead th {
+  color: #ccc;
+  background-color: #444;
+}
+
+.table tbody tr {
+  background-color: #444;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #555;
+}
+
+.table-dark {
+  background-color: #444;
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: #555;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    margin-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
+  }
+}

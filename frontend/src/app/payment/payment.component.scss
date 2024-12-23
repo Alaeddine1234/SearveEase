@@ -1,0 +1,175 @@
+.container-fluid {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+  background-color: #212529;
+  color: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  height: fit-content; /* Fixed height for the card */
+  overflow-y: auto; /* Scroll if content exceeds height */
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+input::placeholder{
+  color:rgb(188, 182, 182)
+}
+.credit-card-details,
+.cash-payment-info {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-top: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px; /* Margin between label and input */
+}
+
+input.form-control {
+  background-color: #343a40; /* Dark background for input */
+  border: 1px solid #495057; /* Dark border */
+  color: white; /* Text color */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center buttons */
+  margin-top: 20px;
+}
+
+.btn {
+  width: 100%; /* Full width buttons */
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #00aaff; /* Blue sky color */
+  border: none;
+}
+
+.btn-success {
+  background-color: #28a745; /* Green color for success */
+  border: none;
+}
+
+.btn-block {
+  margin-top: 10px;
+}
+
+
+/* Spinner style */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+/* Spinner style */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal popup styling */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: grey;
+}

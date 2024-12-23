@@ -1,0 +1,71 @@
+<div class="container-fluid" style="color: white; padding:20px 20px">
+  @if (role === 'admin') {
+    <h1>Admin Dashboard</h1>
+  <h6>Welcome admin</h6>
+  <div>
+    @if (role === "admin") {
+      <app-user-management></app-user-management>
+    }
+    <app-products></app-products>
+    <div>
+      <h3 class="text-center">All orders</h3>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <div class="container-fluid" style="min-height: 100vh;">
+        <div class="container my-orders-container">
+          <h2 class="mb-5">My Orders</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th>Index</th>
+                  <th>Table</th>
+                  <th>Created At</th>
+                  <th>Order Details</th>
+                  <th>
+                    Price
+                    <br>
+                    <span style="color: rgb(6, 196, 6)">Total: €{{ totalIncome.toFixed(2) }}</span>
+                  </th>
+                  <th>Status</th>
+                  <th>Invoice</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ order.tableNumber }}</td>
+                  <td>{{ formatDateTime(order.createdAt) }}</td>
+                  <td>
+                    <div *ngFor="let detail of order.orderDetails">
+                      {{ detail.productName }} x {{ detail.quantity }}
+                    </div>
+                  </td>
+                  <td>€{{ order.totalPrice.toFixed(2) }}</td>
+                  <td>{{ order.status }}</td>
+                  <td><i class="fas fa-external-link" style="cursor: pointer" (click)="navigateToInvoice(order._id)"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        th, td {
+          vertical-align: middle;
+          text-align: center;
+        }
+        </style>
+
+</div>
+</div>
+  }
+  @else {
+    <div style="min-height: 100vh ; flex-direction: column;" class="d-flex align-items-center justify-content-center">
+      <h3 style="color:red; font-weight: bold;">ACCESS DENIED.</h3>
+      <p style="color:red; font-weight: bold;">This page is restricted exclusively to admins.</p>
+    </div>
+  }
+
+</div>
+

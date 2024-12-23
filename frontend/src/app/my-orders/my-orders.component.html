@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="container-fluid" style="min-height: 100vh;">
+  <div class="container my-orders-container">
+    <h2 class="mb-5">My Orders</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Table</th>
+            <th>Created At</th>
+            <th>Order Details</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Invoice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ order.tableNumber }}</td>
+            <td>{{ formatDateTime(order.createdAt) }}</td>
+            <td>
+              <div *ngFor="let detail of order.orderDetails">
+                {{ detail.productName }} x {{ detail.quantity }}
+              </div>
+            </td>
+            <td>€{{ order.totalPrice.toFixed(2) }}</td>
+            <td>{{ order.status }}</td>
+            <td><i class="fas fa-credit-card me-3" style="cursor: pointer" (click)="navigateToPayment(order._id)"></i> <i class="fas fa-external-link" style="cursor: pointer" (click)="navigateToInvoice(order._id)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+  th, td {
+    vertical-align: middle;
+    text-align: center;
+  }
+</style>

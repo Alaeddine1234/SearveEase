@@ -1,0 +1,49 @@
+.container-fluid {
+  padding: 20px;
+  background-color: #1F1F1F;
+}
+
+.card {
+  border: none;
+  background-color: #1F1F1F; /* Dark background */
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.modal-background {
+  color:white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content .form-group {
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin: 5px;
+}
+
+:host {
+  margin-top: 10px; // Adjust as needed
+}
